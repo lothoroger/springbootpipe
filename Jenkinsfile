@@ -8,7 +8,7 @@ pipeline {
                 git 'https://github.com/lothoroger/springbootpipe.git'
 
                 // Run Maven wrapper.
-                sh "mvn compile"
+                bat "mvn compile"
 			
 		echo 'Building the Project with maven compiler'
                 
@@ -19,7 +19,7 @@ pipeline {
 
 		steps {
 
-			sh 'mvn test'
+			bat 'mvn test'
 			echo 'Testing the projectwith mave test'	           
             }
         }
@@ -28,7 +28,7 @@ stage('Deploy') {
 
 		steps {
 
-			sh 'mvn package'
+			bat 'mvn package'
 			echo 'Deploy the project with maven package'	           
             }
         }
